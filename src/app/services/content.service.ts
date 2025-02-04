@@ -25,4 +25,9 @@ export class ContentService {
   deleteContent(contentId: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/content/${contentId}`);
   }
+
+  searchContent(query: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/content/search?query=${query}`);
+  }
+
 }

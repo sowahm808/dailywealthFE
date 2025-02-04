@@ -1,0 +1,13 @@
+<!-- course.component.html -->
+<div class="courses-container">
+  <h2>Courses</h2>
+  <ul>
+    <li *ngFor="let course of courses" (click)="selectCourse(course)">
+      <h3>{{ course.name }}</h3>
+      <div *ngIf="selectedCourse === course">
+        <p>{{ course.description }}</p>
+        <iframe *ngIf="course.videoDetails" [src]="course.videoDetails | safeUrl" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,10 @@
+<!-- live-event.component.html -->
+<div class="live-events">
+  <h2>Upcoming Live Events</h2>
+  <div *ngFor="let event of events">
+    <h3>{{ event.name }}</h3>
+    <p>{{ event.description }}</p>
+    <iframe *ngIf="event.isLive" [src]="event.liveUrl" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+

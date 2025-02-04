@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { ForumService } from '../../services/forum.service';
 
 @Component({
   selector: 'app-forum',
   templateUrl: './forum.component.html',
-  styleUrls: ['./forum.component.scss'],
+  styleUrls: ['./forum.component.scss']
 })
-export class ForumComponent  implements OnInit {
+export class ForumComponent implements OnInit {
+  forumPosts: any[] = [];
 
-  constructor() { }
+  constructor(private forumService: ForumService) {}
 
-  ngOnInit() {}
-
+  ngOnInit(): void {
+    this.forumService.getForums().subscribe(posts => {
+      this.forumPosts = posts;
+    });
+  }
 }

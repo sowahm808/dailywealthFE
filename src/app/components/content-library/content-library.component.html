@@ -1,0 +1,9 @@
+<div class="content-library">
+  <h2>Content Library</h2>
+  <input type="text" placeholder="Search content..." [formControl]="searchControl">
+  <div *ngFor="let content of contents">
+    <h3>{{ content.title }}</h3>
+    <p>{{ content.description }}</p>
+    <a [href]="content.url" target="_blank">View Content</a>
+  </div>
+</div>

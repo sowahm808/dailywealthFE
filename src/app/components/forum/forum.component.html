@@ -1,3 +1,9 @@
-<p>
-  forum works!
-</p>
+<!-- forum.component.html -->
+<div class="forum-container">
+  <h2>Community Forum</h2>
+  <div *ngFor="let post of forumPosts">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content }}</p>
+    <small>Posted by: {{ post.postedBy }}</small>
+  </div>
+</div>
